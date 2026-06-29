@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHURCH_SERVICES</title>
+<style>
+ body {
+background-color: #0f0f12;
+color: #ffffff;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 40px 20px;
+}
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 4%;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 100;
+background: linear-gradient(to bottom, rgba(121, 0, 48, 0.9), transparent);
+}
+
+.nav-links {
+display: flex;
+gap: 30px;
+list-style: none;
+}
+
+.nav-links a {
+color: #aaa;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+
+color: #fff;
+}
+.nav-links a.active {
+    background: rgba(48, 0, 223, 0.228);
+    border-radius: 2px;
+}
+   
+
+      .navVideo {
+        color: rgb(0, 232, 232);
+        background: linear-gradient(45deg, orangered, rgb(94, 0, 113));
+        border-radius: 6px;
+        margin-left: 28px;
+        padding: 6px;
+        text-decoration: none;
+      }       
+
+.gallery-container {
+    background: linear-gradient(rgba(98, 0, 100, 0.74) 0%, rgba(52, 0, 135, 0.393), transparent 70%);
+
+max-width: 1100px;
+margin: 49px auto;
+}
+
+.gallery-title {
+    color: slategrey;
+    font-family: cursive;
+font-size: 1.6rem;
+margin-bottom: 20px;
+margin-left: 26px;
+font-weight: 600;
+letter-spacing: 0.5px;
+}
+
+/* Main Showcase Player Styling */
+.main-player-section {
+background-color: #17171c;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+margin-bottom: 30px;
+}
+
+.video-wrapper {
+position: relative;
+width: 100%;
+background-color: #000;
+}
+
+.video-wrapper video {
+width: 100%;
+display: block;
+max-height: 550px;
+}
+
+/* Info Bar Below Main Video */
+.video-info-bar {
+padding: 25px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 20px;
+
+}
+
+.text-details h2 {
+margin: 0 0 8px 0;
+font-size: 1.5rem;
+}
+
+.text-details p {
+margin: 0;
+color: #aaaaaa;
+font-size: 0.95rem;
+line-height: 1.4;
+}
+
+/* Premium Download Button */
+.download-button {
+background: linear-gradient(135deg, #007bff, #0056b3);
+color: #ffffff;
+text-decoration: none;
+
+padding: 12px 24px;
+border-radius: 8px;
+font-weight: bold;
+font-size: 0.95rem;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: transform 0.2s ease, background 0.2s ease;
+box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.download-button:hover {
+transform: translateY(-2px);
+background: linear-gradient(135deg, #1e87f0, #004ba0);
+}
+
+/* Lower Video Selector Grid */
+.video-grid {
+
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+}
+
+/* Individual Thumbnail Cards */
+.video-card {
+background-color: #17171c;
+border-radius: 8px;
+overflow: hidden;
+cursor: pointer;
+border: 2px solid transparent;
+transition: border-color 0.2s ease, transform 0.2s ease;
+display: flex;
+flex-direction: column;
+}
+
+.video-card:hover {
+
+transform: translateY(-3px);
+border-color: #33333b;
+}
+
+/* Active Highlight Style */
+.video-card.active {
+border-color: #007bff;
+background-color: #1c1c24;
+}
+
+/* Temporary dark grey box simulating a thumbnail image */
+.thumbnail-placeholder {
+background-color: #26262b;
+height: 160px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2rem;
+color: #55555e;
+
+transition: color 0.2s ease;
+}
+
+.video-card:hover .thumbnail-placeholder {
+color: #007bff;
+}
+
+.card-info {
+padding: 15px;
+}
+
+.card-info h3 {
+margin: 0 0 5px 0;
+font-size: 1rem;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.card-info p {
+
+margin: 0;
+color: #77777e;
+font-size: 0.85rem;
+}
+
+
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="video.html" class="active">Our Videos Library</a></li>
+        <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div></div> </nav>
+        
+<div class="gallery-container">
+<b class="gallery-title">Church Services</b>
+<a href="video.html"  class="navVideo">Library home</a>
+
+<!-- 1. MAIN FEATURED PLAYER SECTION -->
+<div class="main-player-section">
+<div class="video-wrapper">
+<!-- The active video playing right now -->
+<video id="mainVideo" controls poster="https://unsplash.com">
+<source id="videoSource" src="test.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<!-- Video Details & Download Button -->
+<div class="video-info-bar">
+<div class="text-details">
+<h2 id="mainVideoTitle">Word From The Pastor</h2>
+<p id="mainVideoDesc">Purity Is The Sound Of Revival</p>
+</div>
+<!-- The Download Button -->
+<a id="downloadBtn" href="test.mp4" download class="download-button">
+<span>📥</span> Download Video
+</a>
+</div>
+
+</div>
+
+<!-- 2. THE VIDEO SELECTION GRID (THUMBNAILS) -->
+<div class="video-grid">
+       <b>New Videos</b>
+<!-- Card 1 (Active by default) -->
+<div class="video-card active">
+
+    <video src="test.mp4" controls preload="metadata"></video>
+
+<div class="card-info">
+<h3>01. Mkutano Wa Injili</h3>
+<p>short video clip</p>
+</div>
+</div>
+
+<!-- Card 2 -->
+<div class="video-card">
+
+    <video src="test.mp4" controls preload="metadata"></video>
+
+<div class="card-info">
+    <h3>02. Mkutano Wa Injili Mahubiri</h3>
+    <p>Eneo la Olasiti pamoja na kikundi cha Umisheni kutoka chuo cha Bibilia NBC Arusha; Mchungaji: PASKALI PAULO BAJUTA</p>
+    </div>
+</div>
+
+
+<!-- Card 3 -->
+<div class="video-card">
+
+    <video src="test.mp4" controls preload="metadata"></video>
+
+<div class="card-info">
+    <h3>03. Mkutano Wa Injili Mahubiri</h3>
+    <p>Eneo la Olasiti pamoja na kikundi cha Umisheni kutoka chuo cha Bibilia NBC Arusha; Mchungaji: RUBEN LAIZER</p>
+</div>
+</div>
+
+
+
+<!-- Card 4 -->
+<div class="video-card">
+
+    <video src="test.mp4" controls preload="metadata"></video>
+
+<div class="card-info">
+    <h3>04. Mkutano Wa Injili Mahubiri</h3>
+    <p>Eneo la Olasiti pamoja na kikundi cha Umisheni kutoka chuo cha Bibilia NBC Arusha; Mchungaji: ELIA MOSES</p>
+</div>
+</div>
+
+<!-- Card 5 -->
+<div class="video-card">
+
+    <video src="test.mp4" controls preload="metadata"></video>
+
+<div class="card-info">
+    <h3>05. Mkutano Wa Injili Mahubiri</h3>
+    <p>Eneo la Olasiti pamoja na kikundi cha Umisheni kutoka chuo cha Bibilia NBC Arusha; Mchungaji: ELIA MOSES</p>
+</div>
+</div>
+
+
+<!-- Card 6 -->
+<div class="video-card">
+
+    <video src="test.mp4" controls preload="metadata"></video>
+
+<div class="card-info">
+    <h3>06. Mkutano Wa Injili Mahubiri</h3>
+    <p>Eneo la Olasiti pamoja na kikundi cha Umisheni kutoka chuo cha Bibilia NBC Arusha; Mchungaji: ELIA MOSES</p>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<script src="script.js">
+function changeVideo(videoUrl, title, description, cardElement) {
+const mainVideo = document.getElementById('mainVideo');
+const videoSource = document.getElementById('videoSource');
+const mainVideoTitle = document.getElementById('mainVideoTitle');
+const mainVideoDesc = document.getElementById('mainVideoDesc');
+const downloadBtn = document.getElementById('downloadBtn');
+
+// 1. Change the source path of the video file
+videoSource.src = videoUrl;
+
+// 2. Update the hidden target file for the download button link
+downloadBtn.href = videoUrl;
+
+// 3. Update the text titles on display
+mainVideoTitle.textContent = title;
+mainVideoDesc.textContent = description;
+
+// 4. Force browser element to reload data timeline and play
+mainVideo.load();
+mainVideo.play();
+
+// 5. Shift visual blue highlight border styling onto the clicked item
+const allCards = document.querySelectorAll('.video-card');
+
+allCards.forEach(card => card.classList.remove('active'));
+cardElement.classList.add('active');
+}
+
+
+</script>
+</body>
+</html>

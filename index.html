@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalom Valley View Church</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+background-color: #0f1014; /* Deep Google TV Dark background */
+
+color: #f1f1f1;
+overflow-x: hidden;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 4%;
+position: fixed;
+top: 0;
+width: 100%;
+z-index: 100;
+background: linear-gradient(to bottom, rgba(15,16,20,0.9), transparent);
+}
+
+.nav-logo {
+
+font-size: 15px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+color: #fff;
+text-align: center;
+margin-left: -18px;
+border: 2px solid rgb(170, 0, 255);
+border-radius: 4px;
+}
+
+.nav-links {
+display: flex;
+gap: 30px;
+list-style: none;
+}
+
+.nav-links a {
+color: #aaa;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+
+color: #fff;
+}
+   
+.nav-links a.active {
+    background: rgba(48, 0, 223, 0.228);
+    border-radius: 2px;
+}
+
+/* --- Featured Hero Billboard --- */
+.hero {
+position: relative;
+width: 100%;
+height: 60vh;
+display: flex;
+align-items: center;
+padding: 0 4%;
+background: linear-gradient(rgba(0, 42, 255, 0.443) 0%, rgba(214, 2, 247, 0.393), transparent 70%);
+background-size: cover;
+background-position: center;
+}
+
+.hero-content {
+max-width: 600px;
+z-index: 2;
+}
+
+.hero-title {
+font-size: 20px;
+margin-bottom: 15px;
+font-weight: 700;
+}
+
+.hero-desc {
+font-size: 16px;
+color: #ccc;
+margin-bottom: 25px;
+line-height: 1.5;
+}
+
+.btn {
+padding: 12px 28px;
+
+font-size: 16px;
+font-weight: 600;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+transition: transform 0.2s;
+}
+
+.btn-primary {
+background-color: #9c0000;
+color: #efeded;
+text-decoration: none;
+}
+
+.btn:hover {
+transform: scale(1.05);
+}
+
+
+.media-row {
+margin-bottom: 30px;
+}
+
+.row-title {
+font-size: 20px;
+margin-left: 4%;
+margin-bottom: 15px;
+font-weight: 600;
+}
+
+.rail-wrapper {
+position: relative;
+}
+
+
+.rail {
+display: flex;
+gap: 20px;
+overflow-x: auto;
+padding: 10px 4% 20px 4%;
+scroll-behavior: smooth;
+}
+
+.rail::-webkit-scrollbar {
+display: none;
+}
+.rail {
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+
+.card {
+
+flex: 0 0 260px; /* Fixed card width */
+aspect-ratio: 16 / 9;
+background-color: #232429;
+border-radius: 12px;
+overflow: hidden;
+cursor: pointer;
+position: relative;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+width: 100%;
+height: 100%;
+}
+
+#greeting {
+   color: goldenrod;
+   animation-name: greet;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+   animation-fill-mode: forwards;
+   animation-timing-function: ease-out;
+}
+
+@keyframes greet {
+    from {
+         color: goldenrod;
+         font-family: cursive;
+         font-size: 1rem;
+    }
+    to {
+        color: rgb(185, 120, 0);
+        font-family: monospace;
+        font-size: 1.4rem;
+    }
+}
+
+.card:hover {
+transform: scale(1.08);
+
+box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+z-index: 10;
+}
+
+.card-title {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+padding: 15px 10px 10px 10px;
+background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+font-size: 14px;
+font-weight: 500;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.card:hover .card-title {
+opacity: 1;
+
+}
+
+   .intro {
+    margin-left: 18px;
+    margin-bottom: 9px;
+   }
+    h5 {
+    color: rgb(107, 0, 179);
+   }
+
+   .summaryTBL {
+    border: 1px solid rgb(62, 0, 95);
+    line-height: 3rem;
+    border-radius: 6px;
+    margin-left: 18px;
+    margin-top: 16px;
+   }
+
+   .footer  {
+    color: blueviolet;
+    font-size: 1rem;
+    position: relative;
+    animation-name: purity;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+   }
+
+   @keyframes purity {
+    from {
+        color: blueviolet;
+        left: 0px;
+    }
+    to {
+        color: aqua;
+        left: 60px;
+    }
+   }
+
+   footer {
+    text-align: center;
+    background-color: black;
+    bottom: 0;
+    padding-bottom: 32px;
+   }
+</style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav-logo"><img src="TAG OFFICIAL LOGO Without background.png" width="30px" height="30px">Shalom Valley View Church</div>
+
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="video.html">Our Videos Library</a></li>
+<li><a href="about.html">About Us</a></li>
+</ul>
+<div></div> </nav>
+
+
+<header class="hero">
+<div class="hero-content">
+<b class="hero-title">Hi!</b> <i id="greeting"></i>
+<p class="hero-desc">GOD is spirit, and those who worship him must worship in spirit and truth
+
+.</p>
+<a href="https://youtube.com" target="_blank" rel="noopener" class="btn btn-primary">YouTube Channel</a>
+</div>
+</header>
+<div class="footer"><i><u>Purity & Balance Is The Sound Of Revival</u></i></div>
+
+<main class="row-container" id="dashboard-rows">
+
+     <p class="intro">
+        Our church is located at Arusha Tanzania in Olasiti ward at Oloresho village, it's just about 15km from 
+        Arusha bus stop/ kilombero market place. Welcome and come to worship with us in our church.
+          <h5 class="h5">Here is a summary Of our worshiping services</h5>
+          <table border="1px" class="summaryTBL">
+            <tr>
+                <th colspan="3">Our Worship Sermons Time-Table</th>
+                </tr>
+              <tr>
+                <td><b>DAY</b></td>
+                <td><b>Time</b></td>
+                <td><b>Sermon Type</b></td>
+              </tr>  
+
+              <tr>
+                <td>SUNDAY</td>
+                <td>8:00AM to 11:00AM</td>
+                <td>Sunday worshiping service</td>
+              </tr>
+              <tr>
+                <td>WEDNESDAY</td>
+                <td>4:00PM to 6:00PM</td>
+                <td>Bible Study</td>
+              </tr>
+
+              <tr>
+                <td>FRIDAY</td>
+                <td>4:00PM to 6:00PM</td>
+                <td>Prayers Service</td>
+              </tr>
+              <tr>
+                <td>FRIDAY</td>
+                <td>10:00PM to 6:00AM</td>
+                <td>Night Watch</td>
+              </tr>
+
+
+          </table>
+    </p>
+
+    You are warmly welcomed to worship with us.
+
+     </p>
+</main>
+      <footer>
+        &#169; 2026, Shalom Valley View Church
+      </footer>
+<script>
+
+
+ function UpdateGreetings() {
+        const currentHour = new Date().getHours();
+
+        const greetingElement = document.getElementById("greeting");
+
+        if (currentHour >= 5 && currentHour < 12)  {
+            greetingElement.textContent = "Good Morning \u{1F304}";
+
+        }   else if (currentHour >= 12 && currentHour < 17)  {
+            greetingElement.textContent = "Good Afternoon \u{2600}"; 
+        }  else if (currentHour >= 17){
+            greetingElement.textContent = "Good Evening \u{1F307}";
+        }  else if (currentHour >= 22) {
+            greetingElement.textContent = "Good Night \u{1F319}";
+        }
+ }
+
+     UpdateGreetings();
+</script>
+</body>
+</html>
